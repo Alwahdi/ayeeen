@@ -11,9 +11,12 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@clerk/expo": "^3.1.5",
     "@tailwindcss/postcss": "^4.1.13",
     "expo": "^54.0.0",
+    "expo-secure-store": "^55.0.9",
     "expo-status-bar": "~3.0.8",
+    "expo-updates": "~29.0.16",
     "nativewind": "preview",
     "postcss": "^8.5.6",
     "react": "19.1.0",
