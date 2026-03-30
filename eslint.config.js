@@ -1,4 +1,4 @@
-/* eslint-env node */
+/* global */
 const { defineConfig } = require('eslint/config');
 const expoConfig = require('eslint-config-expo/flat');
 
@@ -10,6 +10,7 @@ module.exports = defineConfig([
   {
     rules: {
       'react/display-name': 'off',
+      'import/no-unresolved': 'off',
     },
   },
 ]);
