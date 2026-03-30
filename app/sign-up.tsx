@@ -71,14 +71,12 @@ export default function SignUpScreen() {
       }
 
       // Step 4: Finalize to set the session active
-      if (signUp.status === 'complete') {
-        const finalizeResult = await signUp.finalize();
-        if (finalizeResult.error) {
-          setError(finalizeResult.error.message ?? 'Failed to complete sign up.');
-          return;
-        }
-        router.replace('/(auth)/(tabs)');
+      const finalizeResult = await signUp.finalize();
+      if (finalizeResult.error) {
+        setError(finalizeResult.error.message ?? 'Failed to complete sign up.');
+        return;
       }
+      router.replace('/(auth)/(tabs)');
     } catch {
       setError('An unexpected error occurred. Please try again.');
     } finally {

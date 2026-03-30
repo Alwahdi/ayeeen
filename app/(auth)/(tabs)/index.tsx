@@ -155,7 +155,7 @@ export default function HomeScreen() {
               className="h-12 w-12 items-center justify-center rounded-full bg-purple-50"
               accessibilityLabel="Profile settings"
               accessibilityRole="button">
-              <Text className="text-xl">{user?.imageUrl ? '👤' : getInitial(firstName)}</Text>
+              <Text className="text-xl">{getInitial(firstName)}</Text>
             </Pressable>
           </View>
         </View>

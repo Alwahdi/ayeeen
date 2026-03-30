@@ -45,14 +45,12 @@ export default function SignInScreen() {
       }
 
       // Step 3: Finalize to set the session active
-      if (signIn.status === 'complete') {
-        const finalizeResult = await signIn.finalize();
-        if (finalizeResult.error) {
-          setError(finalizeResult.error.message ?? 'Failed to complete sign in.');
-          return;
-        }
-        router.replace('/(auth)/(tabs)');
+      const finalizeResult = await signIn.finalize();
+      if (finalizeResult.error) {
+        setError(finalizeResult.error.message ?? 'Failed to complete sign in.');
+        return;
       }
+      router.replace('/(auth)/(tabs)');
     } catch {
       setError('An unexpected error occurred. Please try again.');
     } finally {

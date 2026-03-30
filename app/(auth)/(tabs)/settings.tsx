@@ -81,7 +81,7 @@ export default function SettingsScreen() {
 
         {/* General Section */}
         <View className="mb-2 px-6 pt-4">
-          <Text className="mb-1 text-xs font-semibold tracking-wider text-neutral-400 uppercase">
+          <Text className="mb-1 text-sm font-semibold tracking-wider text-neutral-400">
             General
           </Text>
         </View>
@@ -103,7 +103,7 @@ export default function SettingsScreen() {
 
         {/* Accessibility Section */}
         <View className="mb-2 px-6 pt-6">
-          <Text className="mb-1 text-xs font-semibold tracking-wider text-neutral-400 uppercase">
+          <Text className="mb-1 text-sm font-semibold tracking-wider text-neutral-400">
             Accessibility
           </Text>
         </View>
@@ -124,9 +124,7 @@ export default function SettingsScreen() {
 
         {/* About Section */}
         <View className="mb-2 px-6 pt-6">
-          <Text className="mb-1 text-xs font-semibold tracking-wider text-neutral-400 uppercase">
-            About
-          </Text>
+          <Text className="mb-1 text-sm font-semibold tracking-wider text-neutral-400">About</Text>
         </View>
 
         <SettingsItem icon="information-circle-outline" label="About Ayeeen" labelAr="عن عين" />
