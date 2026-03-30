@@ -1,0 +1,38 @@
+# Maestro E2E Test: App Launch Performance
+# This test verifies the app launches quickly and doesn't get stuck
+# on update screens or loading states.
+#
+# Prerequisites:
+#   - Install Maestro: https://maestro.mobile.dev/getting-started/installing-maestro
+#   - Build a development client: npx expo run:android / npx expo run:ios
+#   - Or use EAS: eas build --profile development --platform android
+#
+# Run: maestro test .maestro/app-launch.yaml
+
+appId: com.alwahdi.ayeeen
+---
+# Verify app launches within reasonable time
+- launchApp:
+    clearState: true
+    clearKeychain: true
+    stopApp: true
+
+# The app should show the welcome screen (not stuck on updates/splash)
+- assertVisible:
+    text: 'عين'
+    timeout: 15000
+
+- assertVisible:
+    text: 'Ayeeen'
+
+- assertVisible:
+    text: 'Your AI-Powered'
+
+- assertVisible:
+    text: 'Get Started'
+
+- assertVisible:
+    text: 'I have an account'
+
+# Take a screenshot for verification
+- takeScreenshot: launch-welcome-screen

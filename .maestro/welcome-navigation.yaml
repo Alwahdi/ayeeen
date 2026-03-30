@@ -1,0 +1,44 @@
+# Maestro E2E Test: Welcome Screen Navigation
+# Tests the welcome screen buttons and navigation flow.
+#
+# Run: maestro test .maestro/welcome-navigation.yaml
+
+appId: com.alwahdi.ayeeen
+---
+- launchApp:
+    clearState: true
+    clearKeychain: true
+
+# Wait for welcome screen
+- assertVisible:
+    text: 'عين'
+    timeout: 15000
+
+# Test "Get Started" navigates to Sign Up
+- tapOn: 'Get Started'
+
+- assertVisible:
+    text: 'Create Account'
+    timeout: 5000
+
+- assertVisible:
+    text: 'أنشئ حسابك'
+
+# Go back to welcome screen
+- tapOn: '← Back'
+
+- assertVisible:
+    text: 'عين'
+    timeout: 5000
+
+# Test "I have an account" navigates to Sign In
+- tapOn: 'I have an account'
+
+- assertVisible:
+    text: 'Welcome back'
+    timeout: 5000
+
+- assertVisible:
+    text: 'مرحباً بعودتك'
+
+- takeScreenshot: welcome-navigation-complete

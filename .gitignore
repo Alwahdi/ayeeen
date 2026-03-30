@@ -27,3 +27,6 @@ android/
 
 # Package manager
 bun.lock
+
+# Test coverage
+coverage/
