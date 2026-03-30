@@ -1,3 +1,4 @@
+import type React from 'react';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react-native';
 
 import SignInScreen from '@/app/sign-in';

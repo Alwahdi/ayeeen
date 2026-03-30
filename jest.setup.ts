@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-require-imports */
 // Jest setup file for Ayeeen app tests
+import type React from 'react';
 
 // Expo 54's winter runtime installs lazy globals (structuredClone, URL, etc.)
 // via Object.defineProperty with getters that do dynamic require() calls.
