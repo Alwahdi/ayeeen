@@ -1,23 +1,33 @@
 {
   "expo": {
-    "name": "my-expo-app",
+    "name": "عين - Ayeeen",
     "slug": "ayeeen",
     "version": "1.0.0",
+    "scheme": "ayeeen",
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
     },
     "experiments": {
       "tsconfigPaths": true
     },
-    "plugins": [],
+    "plugins": [
+      "expo-router",
+      "expo-font",
+      "expo-secure-store",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#7C3AED",
+          "image": "./assets/splash.png",
+          "imageWidth": 200
+        }
+      ]
+    ],
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
-    "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
     "assetBundlePatterns": [
       "**/*"
     ],
@@ -31,13 +41,16 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#7C3AED"
       },
       "package": "com.alwahdi.ayeeen"
     },
     "extra": {
       "eas": {
         "projectId": "627f26b6-85d8-446e-97ff-a818a76b9669"
+      },
+      "router": {
+        "origin": false
       }
     },
     "owner": "alwahdi",
