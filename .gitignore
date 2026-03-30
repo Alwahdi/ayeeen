@@ -26,4 +26,4 @@ android/
 .metro-health-check*
 
 # Package manager
-package-lock.json
+bun.lock
