@@ -1,0 +1,47 @@
+# Maestro E2E Test: Accessibility Checks
+# Verifies that key accessibility features are present in the app.
+# This is critical for an app designed for blind users.
+#
+# Run: maestro test .maestro/accessibility.yaml
+
+appId: com.alwahdi.ayeeen
+---
+- launchApp:
+    clearState: true
+    clearKeychain: true
+
+# Welcome screen should be accessible
+- assertVisible:
+    text: 'عين'
+    timeout: 15000
+
+# Navigate to Sign In and verify accessibility hints
+- tapOn: 'I have an account'
+
+- assertVisible:
+    text: 'Welcome back'
+    timeout: 5000
+
+# Verify input fields have accessibility labels
+- assertVisible:
+    hint: 'Enter your email address to sign in'
+
+- assertVisible:
+    hint: 'Enter your password to sign in'
+
+# Go back and navigate to Sign Up
+- tapOn: '← Back'
+- tapOn: 'Get Started'
+
+- assertVisible:
+    text: 'Create Account'
+    timeout: 5000
+
+# Verify sign-up fields have accessibility labels
+- assertVisible:
+    hint: 'Enter your email address to create an account'
+
+- assertVisible:
+    hint: 'Create a password for your account'
+
+- takeScreenshot: accessibility-verified

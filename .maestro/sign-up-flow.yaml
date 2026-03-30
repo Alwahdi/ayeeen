@@ -1,0 +1,50 @@
+# Maestro E2E Test: Sign-Up Flow
+# Tests the complete sign-up form interaction.
+#
+# Run: maestro test .maestro/sign-up-flow.yaml
+
+appId: com.alwahdi.ayeeen
+---
+- launchApp:
+    clearState: true
+    clearKeychain: true
+
+# Navigate to Sign Up
+- assertVisible:
+    text: 'عين'
+    timeout: 15000
+
+- tapOn: 'Get Started'
+
+- assertVisible:
+    text: 'Create Account'
+    timeout: 5000
+
+# Verify form elements
+- assertVisible: 'Email'
+- assertVisible: 'Password'
+
+# Enter sign-up information
+- tapOn:
+    hint: 'Enter your email address to create an account'
+- inputText: 'newuser@example.com'
+
+- tapOn:
+    hint: 'Create a password for your account'
+- inputText: 'SecurePassword123!'
+
+- takeScreenshot: sign-up-form-filled
+
+# Navigate between sign-up and sign-in
+- scrollUntilVisible:
+    element:
+      text: 'Sign In'
+    direction: DOWN
+
+- tapOn: 'Sign In'
+
+- assertVisible:
+    text: 'Welcome back'
+    timeout: 5000
+
+- takeScreenshot: sign-up-navigation-complete

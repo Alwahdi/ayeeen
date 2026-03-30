@@ -1,0 +1,44 @@
+# Maestro E2E Test: Sign-In Flow
+# Tests the complete sign-in form interaction and validation.
+#
+# Run: maestro test .maestro/sign-in-flow.yaml
+
+appId: com.alwahdi.ayeeen
+---
+- launchApp:
+    clearState: true
+    clearKeychain: true
+
+# Navigate to Sign In
+- assertVisible:
+    text: 'عين'
+    timeout: 15000
+
+- tapOn: 'I have an account'
+
+- assertVisible:
+    text: 'Welcome back'
+    timeout: 5000
+
+# Verify form elements are present
+- assertVisible: 'Email'
+- assertVisible: 'Password'
+- assertVisible: 'Sign In'
+
+# Test entering credentials
+- tapOn:
+    hint: 'Enter your email address to sign in'
+- inputText: 'test@example.com'
+
+- tapOn:
+    hint: 'Enter your password to sign in'
+- inputText: 'TestPassword123'
+
+- takeScreenshot: sign-in-form-filled
+
+# Test the Sign In button is tappable
+- tapOn: 'Sign In'
+
+# Note: In E2E testing, this will attempt actual auth.
+# For testing purposes, we verify the form interaction works.
+- takeScreenshot: sign-in-submitted
